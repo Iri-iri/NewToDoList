@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>ToDoList</title>
+</head>
+
+<body>
+  <section class="container">
+    <div class="first-section">
+      <h1 class="title"><span class="styling">TODO</span>list</h1>
+      <div class="form-container">
+        <form action="#" name="toDoForm">
+          <input class="input-field" type="text" id="todo-title" placeholder="Description">
+          <input class="input-field" type="text" id="todo-deadline" placeholder="Deadline" onfocus="(this.type='date')"
+            onblur="if (this.value === '') this.type = 'text';">
+          <input class="btn submit" type="submit" id="submit-button" value="Submit">
+        </form>
+      </div>
+    </div>
+    <!-- Lists section -->
+    <div class="second-section">
+      <div class="todo-block">
+        <div class="todo-block-title">
+          <h2 class="title">To Do:</h2>
+        </div>
+        <ul class="list" id="to-do-list"></ul>
+        <div class="todo-block-footer">
+          <p class="text-footer">Amount: <span class="counter">0</span></p>
+          <button class="btn clear" value="clear">Clear</button>
+        </div>
+      </div>
+
+      <div class="todo-block">
+        <div class="todo-block-title">
+          <h2 class="title">In Progress:</h2>
+        </div>
+        <ul class="list" id="in-progress-list"></ul>
+        <div class="todo-block-footer">
+          <p class="text-footer">Amount: <span class="counter">0</span></p>
+          <button class="btn clear" value="clear">Clear</button>
+        </div>
+      </div>
+
+      <div class="todo-block">
+        <div class="todo-block-title">
+          <h2 class="title">Done:</h2>
+        </div>
+        <ul class="list" id="done-list"></ul>
+        <div class="todo-block-footer">
+          <p class="text-footer">Amount: <span class="counter">0</span></p>
+          <button class="btn clear" value="clear">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal windows -->
+    <div class="modal-bg" id="error-no-value">
+      <div class="modal">
+        <h2 class="title-modal">ERROR!</h2>
+        <p class="text-modal">Please, add some task.</p>
+        <button class="btn" id="ok-btn"></button>
+      </div>
+    </div>
+
+    <div class="modal-bg" id="confirm-window">
+      <div class="modal">
+        <h2 class="title-modal">This task will be deleted.</h2>
+        <p class="text-modal">Are you sure?</p>
+        <div class="btns-block">
+          <button class="btn" id="confirm-btn">Yes</button>
+          <button class="btn" id="cancel-btn">No</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-bg" id="clear-window">
+      <div class="modal">
+        <h2 class="title-modal">All these tasks will be deleted.</h2>
+        <p class="text-modal">Are you sure?</p>
+        <div class="btns-block">
+          <button class="btn" id="confirm-clear-btn">Yes</button>
+          <button class="btn" id="cancel-clear-btn">No</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <script src="index.js"></script>
+</body>
+
+</html>
